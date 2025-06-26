@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio</title>
+  <style>
+    :root {
+      --bg-color: #121212;
+      --text-color: #f5f5f5;
+      --primary-color: #ff5500;
+      --secondary-color: #1e1e1e;
+      --muted-text: #aaa;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+    }
+
+    header {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 36px;
+    }
+
+    header p {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .post {
+      background-color: var(--secondary-color);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(255,255,255,0.03);
+      margin-bottom: 20px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .post:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 12px rgba(255,255,255,0.05);
+    }
+
+    .post h2 {
+      margin-top: 0;
+      color: var(--primary-color);
+    }
+
+    .post .date {
+      font-size: 14px;
+      color: var(--muted-text);
+      margin-bottom: 10px;
+    }
+
+    .post p {
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: var(--muted-text);
+      background-color: #181818;
+      margin-top: 40px;
+    }
+
+    @media screen and (max-width: 600px) {
+      header h1 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+    <div class="post">
+        <h2>Lời đầu tiên</h2>
+        <div class="date"></div>
+        <p>Xin chào bạn! Đây là blog cá nhân của mình – nơi mình chia sẻ những ý tưởng, cảm hứng và cả những bản nhạc yêu thích. Bài viết đầu tiên này đánh dấu bước khởi đầu cho hành trình viết lách và khám phá thế giới âm nhạc mà mình yêu mến. Mình rất vui được đồng hành cùng các bạn, và hy vọng bạn sẽ tìm thấy điều gì đó thú vị tại đây.</p>
+    </div>
+
+    <div class="post">
+      <h2>Bài viết đầu tiên của tôi</h2>
+      <div class="date"></div>
+      <p>Chào mọi người! Đây là bài viết đầu tiên của mình</p>
+      <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/431893452&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/irregular013" title="Irregular" target="_blank" style="color: #cccccc; text-decoration: none;">Irregular</a> · <a href="https://soundcloud.com/irregular013/tofubeats-candland-feat-liz-pas-lam-system-remix-irregular-edit" title="tofubeats - CAND¥¥¥LAND Feat. LIZ (Pa&#x27;s Lam System Remix) (Irregular Edit)" target="_blank" style="color: #cccccc; text-decoration: none;">tofubeats - CAND¥¥¥LAND Feat. LIZ (Pa&#x27;s Lam System Remix) (Irregular Edit)</a></div>
+    </div>
+
+  </div>
+
+  <footer>
+    &copy; 2025 Đức's Blog. Made with ❤️ in Dark Mode.
+  </footer>
+
+  <script>
+    // Get all elements with the class "date"
+    const dateElements = document.querySelectorAll('.date');
+
+    // Get the current date
+    const currentDate = new Date();
+
+    // Format the date as desired (e.g., "June 27, 2025")
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    const formattedDate = currentDate.toLocaleDateString('en-US', options);
+
+    // Loop through each "date" element and update its content
+    dateElements.forEach(dateElement => {
+      dateElement.textContent = formattedDate;
+    });
+  </script>
+
+</body>
+</html>
