@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Đăng Bài Nhạc - Trang Cá Nhân</title>
+    <style>
+      body {
+        font-family: 'Segoe UI', sans-serif;
+        background-color: #f4f4f4;
+        padding: 40px;
+        margin: 0;
+      }
+
+      .container {
+        max-width: 700px;
+        margin: auto;
+        background: #fff;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      h2 {
+        text-align: center;
+        margin-bottom: 25px;
+      }
+
+      label {
+        font-weight: bold;
+        display: block;
+        margin-top: 20px;
+      }
+
+      input[type='text'],
+      textarea {
+        width: 100%;
+        padding: 12px;
+        margin-top: 8px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        font-size: 16px;
+      }
+
+      button {
+        margin-top: 25px;
+        padding: 12px 20px;
+        background-color: #ff5500;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      button:hover {
+        background-color: #e04a00;
+      }
+
+      .preview {
+        margin-top: 40px;
+      }
+
+      .soundcloud-player {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Đăng Bài Nhạc</h2>
+
+      <label for="title">Tiêu đề bài viết</label>
+      <input type="text" id="title" placeholder="Nhập tiêu đề..." />
+
+      <label for="desc">Mô tả</label>
+      <textarea
+        id="desc"
+        rows="4"
+        placeholder="Viết nội dung bài..."
+      ></textarea>
+
+      <label for="sc-link">Link SoundCloud</label>
+      <input type="text" id="sc-link" placeholder="Dán link SoundCloud..." />
+
+      <button onclick="previewPost()">Xem trước bài đăng</button>
+
+      <div class="preview" id="preview" style="display: none">
+        <h3 id="preview-title"></h3>
+        <p id="preview-desc"></p>
+        <div class="soundcloud-player" id="preview-player"></div>
+      </div>
+    </div>
+
+    <script>
+      function previewPost() {
+        const title = document.getElementById('title').value;
+        const desc = document.getElementById('desc').value;
+        const scLink = document.getElementById('sc-link').value;
+
+        document.getElementById('preview-title').innerText = title;
+        document.getElementById('preview-desc').innerText = desc;
+
+        const encodedLink = encodeURIComponent(scLink);
+        const iframe = `<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+        src="https://w.soundcloud.com/player/?url=${encodedLink}&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false">
+      </iframe>`;
+
+        document.getElementById('preview-player').innerHTML = iframe;
+        document.getElementById('preview').style.display = 'block';
+      }
+    </script>
+  </body>
+</html>

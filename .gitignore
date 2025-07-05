@@ -1,0 +1,21 @@
+# Node modules
+node_modules/
+
+# Lock files
+package-lock.json
+yarn.lock
+
+# Editor config
+.vscode/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Log and cache
+*.log
+.stylelintcache
+
+# Build output (nếu có)
+dist/
+build/

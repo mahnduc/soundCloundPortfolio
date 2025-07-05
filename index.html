@@ -1,131 +1,392 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Portfolio</title>
-  <style>
-    :root {
-      --bg-color: #121212;
-      --text-color: #f5f5f5;
-      --primary-color: #ff5500;
-      --secondary-color: #1e1e1e;
-      --muted-text: #aaa;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./style/index.css" />
+    <link rel="stylesheet" href="./style/layout.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-    }
+    <title>Portfolio</title>
+  </head>
+  <body>
+    <button id="menu-toggle" class="menu-button">
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="layout-content">
+      <!-- Sidebar trái -->
+      <div class="sub-container">
+        <div class="banner">
+          <img
+            src="https://i.pinimg.com/736x/cb/5e/4f/cb5e4f4161b6fe5e51c6ee841c5b8056.jpg"
+          />
+          <p>#MẠNH ĐỨC</p>
+        </div>
+        <div class="search">
+          <input type="text" placeholder="Tìm kiếm" />
+          <button>Tìm kiếm</button>
+        </div>
+        <div class="post">
+          <a href="#">Giới thiệu -</a>
+          <a href="#">Playlist yêu thích -</a>
+          <a href="#">Bài viết -</a>
+          <a href="#">Nổi bật -</a>
+          <a href="#">Về tôi</a>
+        </div>
+        <div class="post style-of-music">
+          <!-- Nhạc hiện đại -->
+          <a href="#">Pop</a>
+          <a href="#">Rock</a>
+          <a href="#">Hip Hop</a>
+          <a href="#">Rap</a>
+          <a href="#">R&B</a>
+          <a href="#">EDM</a>
+          <a href="#">Dance</a>
+          <a href="#">House</a>
+          <a href="#">Techno</a>
+          <a href="#">Trance</a>
 
-    header {
-      background-color: var(--primary-color);
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
-    }
+          <!-- Nhạc nhẹ & thư giãn -->
+          <a href="#">Lofi</a>
+          <a href="#">Chill</a>
+          <a href="#">Ambient</a>
+          <a href="#">Acoustic</a>
+          <a href="#">Instrumental</a>
 
-    header h1 {
-      margin: 0;
-      font-size: 36px;
-    }
+          <!-- Nhạc truyền thống & cổ điển -->
+          <a href="#">Classical</a>
+          <a href="#">Opera</a>
+          <a href="#">Jazz</a>
+          <a href="#">Blues</a>
+          <a href="#">Soul</a>
+          <a href="#">Folk</a>
+          <a href="#">Gospel</a>
 
-    header p {
-      font-size: 18px;
-      margin-top: 10px;
-    }
+          <!-- Nhạc địa phương & đặc trưng -->
+          <a href="#">Reggae</a>
+          <a href="#">Country</a>
+          <a href="#">Latin</a>
+          <a href="#">K-Pop</a>
+          <a href="#">J-Pop</a>
+          <a href="#">C-Pop</a>
+          <a href="#">Afrobeats</a>
+          <a href="#">Bollywood</a>
+          <a href="#">World</a>
 
-    .container {
-      max-width: 800px;
-      margin: auto;
-      padding: 20px;
-    }
+          <!-- Khác -->
+          <a href="#">Indie</a>
+          <a href="#">Alternative</a>
+          <a href="#">Soundtrack</a>
+          <a href="#">Experimental</a>
+          <a href="#">Chiptune</a>
+          <a href="#">Metal</a>
+          <a href="#">Punk</a>
+          <a href="#">Dubstep</a>
+        </div>
+      </div>
 
-    .post {
-      background-color: var(--secondary-color);
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(255,255,255,0.03);
-      margin-bottom: 20px;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
+      <!-- Phần chính giữa -->
+      <div class="main-container">
+        <!-- Bài viết 1 -->
+        <div class="post" data-post="1">
+          <h2>Lời đầu tiên</h2>
+          <div class="date"></div>
+          <p>
+            Xin chào bạn! Đây là blog cá nhân của mình – nơi mình chia sẻ những
+            ý tưởng, cảm hứng và cả những bản nhạc yêu thích...
+          </p>
+        </div>
 
-    .post:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 4px 12px rgba(255,255,255,0.05);
-    }
+        <!-- Bài viết 2 -->
+        <div class="post" data-post="2">
+          <h2>Bài viết đầu tiên của tôi</h2>
+          <div class="date"></div>
+          <p>Chào mọi người! Đây là bài viết đầu tiên của mình</p>
+          <iframe
+            width="100%"
+            height="300"
+            scrolling="no"
+            frameborder="no"
+            allow="autoplay"
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/431893452&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+          ></iframe>
+        </div>
 
-    .post h2 {
-      margin-top: 0;
-      color: var(--primary-color);
-    }
+        <div class="post" data-post="2">
+          <h2>Không tiêu đề</h2>
+          <div class="date"></div>
 
-    .post .date {
-      font-size: 14px;
-      color: var(--muted-text);
-      margin-bottom: 10px;
-    }
+          <iframe
+            width="100%"
+            height="300"
+            scrolling="no"
+            frameborder="no"
+            allow="autoplay"
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1734889368&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+          ></iframe>
+          <div
+            style="
+              font-size: 10px;
+              color: #cccccc;
+              line-break: anywhere;
+              word-break: normal;
+              overflow: hidden;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+              font-family:
+                Interstate,
+                Lucida Grande,
+                Lucida Sans Unicode,
+                Lucida Sans,
+                Garuda,
+                Verdana,
+                Tahoma,
+                sans-serif;
+              font-weight: 100;
+            "
+          >
+            <a
+              href="https://soundcloud.com/trending-music-vn"
+              title="Trending Music"
+              target="_blank"
+              style="color: #cccccc; text-decoration: none"
+              >Trending Music</a
+            >
+            ·
+            <a
+              href="https://soundcloud.com/trending-music-vn/sets/jazz"
+              title="Jazz"
+              target="_blank"
+              style="color: #cccccc; text-decoration: none"
+              >Jazz</a
+            >
+          </div>
+        </div>
 
-    .post p {
-      line-height: 1.6;
-    }
+        <div class="post" data-post="2">
+          <h2>Không tiêu đề</h2>
+          <div class="date"></div>
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
-      color: var(--muted-text);
-      background-color: #181818;
-      margin-top: 40px;
-    }
+          <iframe
+            width="100%"
+            height="300"
+            scrolling="no"
+            frameborder="no"
+            allow="autoplay"
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/562024164&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+          ></iframe>
+          <div
+            style="
+              font-size: 10px;
+              color: #cccccc;
+              line-break: anywhere;
+              word-break: normal;
+              overflow: hidden;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+              font-family:
+                Interstate,
+                Lucida Grande,
+                Lucida Sans Unicode,
+                Lucida Sans,
+                Garuda,
+                Verdana,
+                Tahoma,
+                sans-serif;
+              font-weight: 100;
+            "
+          >
+            <a
+              href="https://soundcloud.com/imedda"
+              title="Medda"
+              target="_blank"
+              style="color: #cccccc; text-decoration: none"
+              >Medda</a
+            >
+            ·
+            <a
+              href="https://soundcloud.com/imedda/watch-her-go-w-omar"
+              title="Watch her go (w/ Omar)"
+              target="_blank"
+              style="color: #cccccc; text-decoration: none"
+              >Watch her go (w/ Omar)</a
+            >
+          </div>
+        </div>
 
-    @media screen and (max-width: 600px) {
-      header h1 {
-        font-size: 28px;
+        <!-- Bài viết 3 -->
+        <div class="post" data-post="3">
+          <h2>Bài viết 3</h2>
+          <div class="date"></div>
+          <p>Nội dung bài viết thứ 3...</p>
+        </div>
+
+        <!-- Bài viết 4 -->
+        <div class="post" data-post="4">
+          <h2>Bài viết 4</h2>
+          <div class="date"></div>
+          <p>Nội dung bài viết thứ 4...</p>
+        </div>
+
+        <!-- Bài viết 5 -->
+        <div class="post" data-post="5">
+          <h2>Bài viết 5</h2>
+          <div class="date"></div>
+          <p>Nội dung bài viết thứ 5...</p>
+        </div>
+
+        <!-- Bài viết 6 -->
+        <div class="post" data-post="6">
+          <h2>Bài viết 6</h2>
+          <div class="date"></div>
+          <p>Nội dung bài viết thứ 6...</p>
+        </div>
+
+        <!-- Phân trang -->
+        <div class="pagination"></div>
+      </div>
+
+      <!-- Sidebar phải -->
+      <div class="sub-container">
+        <div class="post">
+          <h3>Theo dõi tôi trên</h3>
+          <div class="social-links">
+            <a
+              href="https://soundcloud.com/irregular013"
+              target="_blank"
+              title="SoundCloud"
+              class="sc"
+            >
+              <i class="fab fa-soundcloud"></i>
+            </a>
+            <a
+              href="https://www.facebook.com/yourprofile"
+              target="_blank"
+              title="Facebook"
+              class="fb"
+            >
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a
+              href="https://github.com/yourusername"
+              target="_blank"
+              title="GitHub"
+              class="gh"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/yourprofile"
+              target="_blank"
+              title="LinkedIn"
+              class="ln"
+            >
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="post source-code">
+          <a
+            href="https://github.com/mahnduc/soundCloundPortfolio"
+            target="_blank"
+            rel="noopener"
+            class="github-link"
+          >
+            <i class="fab fa-github"></i> Free mã nguồn
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <footer>&copy; 2025 Đức's Blog.</footer>
+
+    <script>
+      // Hiển thị ngày
+      const dateElements = document.querySelectorAll('.date');
+      const currentDate = new Date();
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      const formattedDate = currentDate.toLocaleDateString('vi-VN', options);
+      dateElements.forEach((dateElement) => {
+        dateElement.textContent = formattedDate;
+      });
+
+      // Toggle menu
+      const menuButton = document.getElementById('menu-toggle');
+      const leftSidebar = document.querySelector(
+        '.layout-content .sub-container',
+      );
+      let sidebarVisible = false;
+
+      menuButton.addEventListener('click', () => {
+        sidebarVisible = !sidebarVisible;
+        if (sidebarVisible) {
+          leftSidebar.style.display = 'flex';
+          leftSidebar.style.position = 'fixed';
+          leftSidebar.style.top = '0';
+          leftSidebar.style.left = '0';
+          leftSidebar.style.height = '100vh';
+          leftSidebar.style.zIndex = '999';
+          leftSidebar.style.backgroundColor = '#1a1a1a';
+          leftSidebar.style.padding = '20px';
+          leftSidebar.style.overflowY = 'auto';
+          leftSidebar.style.boxShadow = '2px 0 8px rgba(0,0,0,0.5)';
+          document.body.style.overflow = 'hidden';
+        } else {
+          leftSidebar.style.display = 'none';
+          document.body.style.overflow = 'auto';
+        }
+      });
+
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 1200) {
+          leftSidebar.removeAttribute('style');
+          document.body.style.overflow = 'auto';
+          sidebarVisible = false;
+        }
+      });
+
+      // ==========================
+      // PHÂN TRANG
+      // ==========================
+      const postsPerPage = 6;
+      const posts = document.querySelectorAll(
+        '.main-container .post[data-post]',
+      );
+      const paginationContainer = document.querySelector('.pagination');
+      const totalPages = Math.ceil(posts.length / postsPerPage);
+
+      function showPage(page) {
+        posts.forEach((post, index) => {
+          const start = (page - 1) * postsPerPage;
+          const end = page * postsPerPage;
+          post.style.display = index >= start && index < end ? 'block' : 'none';
+        });
+
+        const buttons = paginationContainer.querySelectorAll('button');
+        buttons.forEach((btn, idx) => {
+          btn.classList.toggle('active', idx === page - 1);
+        });
       }
-    }
-  </style>
-</head>
-<body>
-<div class="container">
 
-    <div class="post">
-        <h2>Lời đầu tiên</h2>
-        <div class="date"></div>
-        <p>Xin chào bạn! Đây là blog cá nhân của mình – nơi mình chia sẻ những ý tưởng, cảm hứng và cả những bản nhạc yêu thích. Bài viết đầu tiên này đánh dấu bước khởi đầu cho hành trình viết lách và khám phá thế giới âm nhạc mà mình yêu mến. Mình rất vui được đồng hành cùng các bạn, và hy vọng bạn sẽ tìm thấy điều gì đó thú vị tại đây.</p>
-    </div>
+      function createPagination() {
+        for (let i = 1; i <= totalPages; i++) {
+          const btn = document.createElement('button');
+          btn.textContent = i;
+          btn.addEventListener('click', () => showPage(i));
+          paginationContainer.appendChild(btn);
+        }
+      }
 
-    <div class="post">
-      <h2>Bài viết đầu tiên của tôi</h2>
-      <div class="date"></div>
-      <p>Chào mọi người! Đây là bài viết đầu tiên của mình</p>
-      <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/431893452&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/irregular013" title="Irregular" target="_blank" style="color: #cccccc; text-decoration: none;">Irregular</a> · <a href="https://soundcloud.com/irregular013/tofubeats-candland-feat-liz-pas-lam-system-remix-irregular-edit" title="tofubeats - CAND¥¥¥LAND Feat. LIZ (Pa&#x27;s Lam System Remix) (Irregular Edit)" target="_blank" style="color: #cccccc; text-decoration: none;">tofubeats - CAND¥¥¥LAND Feat. LIZ (Pa&#x27;s Lam System Remix) (Irregular Edit)</a></div>
-    </div>
-
-  </div>
-
-  <footer>
-    &copy; 2025 Đức's Blog. Made with ❤️ in Dark Mode.
-  </footer>
-
-  <script>
-    // Get all elements with the class "date"
-    const dateElements = document.querySelectorAll('.date');
-
-    // Get the current date
-    const currentDate = new Date();
-
-    // Format the date as desired (e.g., "June 27, 2025")
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    const formattedDate = currentDate.toLocaleDateString('en-US', options);
-
-    // Loop through each "date" element and update its content
-    dateElements.forEach(dateElement => {
-      dateElement.textContent = formattedDate;
-    });
-  </script>
-
-</body>
+      createPagination();
+      showPage(1);
+    </script>
+  </body>
 </html>

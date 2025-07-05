@@ -1,0 +1,19 @@
+{
+  "name": "soundcloud",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier . --write",
+    "lint:css": "stylelint \"**/*.css\"",
+    "lint:css:fix": "stylelint \"**/*.css\" --fix"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "prettier": "^3.6.2",
+    "stylelint": "^16.21.0",
+    "stylelint-config-standard": "^38.0.0"
+  }
+}
